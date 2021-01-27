@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dávkování sirupů</title>
-</head>
-<body>
-   <h1>Dávkování sirupů</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Dávkování sirupů {% endblock %}</h1>
+    <h2></br></h2>
+    {% for record in records %}
+    <a href="#">
+        <h2>{{ record["Name"] }}</h2>
+    </a>
+    {% endfor %}
+{% endblock %}

@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-    
-
-connection = Connect.get_connection()
+    connection = Connect.get_connection()
+    db = connection.sirups_information
+    sirups = db.sirups
+    records = sirups.find()
+    return render_template('index.html', records=records)
