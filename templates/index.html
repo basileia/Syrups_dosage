@@ -4,7 +4,7 @@
     <h1>{% block title %} Dávkování sirupů {% endblock %}</h1>
     <h2></br></h2>
     {% for record in records %}
-    <a href="#">
+    <a href="{{ url_for('syrup', syrup_id=record['_id']) }}">
         <h2>{{ record["Name"] }}</h2>
     </a>
     {% endfor %}
